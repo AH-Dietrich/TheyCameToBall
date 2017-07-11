@@ -20,17 +20,11 @@ public class BallBehavior : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision collision)
 	{
-		//Debug.Log (string.Compare(collision.gameObject.ToString(),"Ground1"));
-		//check-ground 1 or 2?
-		//GameController.addScore();
-		//otherwise net or player
-		//net
-		//players
-		if(string.Compare(collision.gameObject.ToString(),"Ground1") == 1){
+		if(collision.gameObject.transform.name == "Ground1"){
 			Debug.Log ("to ere");
 			gameController.addScore(1);
 		} 
-		else if(string.Compare(collision.gameObject.ToString(),"Ground2") == 1){
+		else if(collision.gameObject.transform.name == "Ground2"){
 			gameController.addScore(2);
 		}
 	}
